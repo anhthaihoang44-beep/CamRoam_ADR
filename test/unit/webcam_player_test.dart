@@ -34,12 +34,12 @@ void main() {
     // Verify Title & City
     expect(find.text('Shibuya Crossing Test'), findsOneWidget);
     expect(find.text('Tokyo'), findsWidgets);
-    expect(find.text('TRỰC TIẾP'), findsOneWidget);
-    expect(find.text('Mở Trực Tiếp'), findsOneWidget);
+    expect(find.text('LIVE'), findsWidgets);
+    expect(find.text('Watch Live'), findsOneWidget);
     expect(find.text('Snapshot'), findsOneWidget);
-    expect(find.text('Bản đồ'), findsOneWidget);
-    expect(find.text('Giờ địa phương'), findsOneWidget);
-    expect(find.text('Tọa độ GPS'), findsOneWidget);
+    expect(find.text('Map'), findsOneWidget);
+    expect(find.text('Local Time'), findsOneWidget);
+    expect(find.text('GPS Coordinates'), findsOneWidget);
   });
 }
 

@@ -66,7 +66,7 @@ class _Panorama360ScreenState extends ConsumerState<Panorama360Screen> {
                 const Text('🏆 ', style: TextStyle(fontSize: 18)),
                 Expanded(
                   child: Text(
-                    'Đã thu thập tem: ${_current.name}!',
+                    'Collected stamp: ${_current.name}!',
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -115,7 +115,7 @@ class _Panorama360ScreenState extends ConsumerState<Panorama360Screen> {
               ),
               child: const Icon(Icons.map_rounded, color: Colors.white, size: 18),
             ),
-            tooltip: 'Xem trên Google Maps',
+            tooltip: 'View on Google Maps',
             onPressed: () async {
               final uri = Uri.parse(
                   'https://maps.google.com/?q=${_current.latitude},${_current.longitude}');
@@ -153,7 +153,7 @@ class _Panorama360ScreenState extends ConsumerState<Panorama360Screen> {
                           ),
                           const SizedBox(height: 14),
                           const Text(
-                            'Đang tải góc nhìn 360°...',
+                            'Loading 360° view...',
                             style: TextStyle(color: Colors.white70, fontSize: 13),
                           ),
                         ],
@@ -201,7 +201,7 @@ class _Panorama360ScreenState extends ConsumerState<Panorama360Screen> {
                         Icon(Icons.touch_app_rounded, color: AppColors.cyan, size: 18),
                         SizedBox(width: 6),
                         Text(
-                          'Vuốt màn hình để xoay 360°',
+                          'Swipe to explore 360°',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 12.5,

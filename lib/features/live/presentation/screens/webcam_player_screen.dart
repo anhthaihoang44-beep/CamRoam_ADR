@@ -65,7 +65,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
       final sign = offset >= 0 ? '+$offset' : '$offset';
       return '$h:$m:$s (UTC$sign)';
     } catch (_) {
-      return 'Trực tiếp';
+      return 'Live';
     }
   }
 
@@ -130,7 +130,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('Không thể mở liên kết phát trực tiếp.'),
+              content: Text('Unable to open live stream.'),
               backgroundColor: AppColors.liveRed,
             ),
           );
@@ -156,7 +156,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
             const SizedBox(width: 8),
             Expanded(
               child: Text(
-                'Đã chụp snapshot từ webcam ${_currentCam.title}!',
+                'Snapshot saved from ${_currentCam.title}!',
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
@@ -171,7 +171,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
 
   void _shareWebcam() {
     Share.share(
-      'Xem trực tiếp ${_currentCam.title} (${_currentCam.city}, ${_currentCam.country}) trên RoamCam:\n${_currentCam.streamUrl}',
+      'Watch live: ${_currentCam.title} (${_currentCam.city}, ${_currentCam.country}) on RoamCam:\n${_currentCam.streamUrl}',
     );
   }
 
@@ -308,7 +308,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
                                   ),
                                   const SizedBox(width: 5),
                                   const Text(
-                                    'TRỰC TIẾP',
+                                    'LIVE',
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w900,
@@ -335,7 +335,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
                                   size: 13, color: Colors.white70),
                               const SizedBox(width: 4),
                               Text(
-                                '$_viewerCount xem',
+                                '$_viewerCount watching',
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 11,
@@ -395,7 +395,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
                             Icon(Icons.play_arrow_rounded, color: AppColors.cyan, size: 26),
                             SizedBox(width: 6),
                             Text(
-                              'Phát Trực Tiếp (Live Stream)',
+                              'Watch Live Stream',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -444,7 +444,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
                           ),
                           const Spacer(),
                           const Text(
-                            'Chạm 2 lần để phóng to',
+                            'Double-tap to zoom',
                             style: TextStyle(
                               color: Colors.white38,
                               fontSize: 10,
@@ -526,7 +526,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
                       onPressed: _openLiveStream,
                       icon: const Icon(Icons.open_in_browser_rounded, size: 18),
                       label: const Text(
-                        'Mở Trực Tiếp',
+                        'Watch Live',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                       ),
                       style: ElevatedButton.styleFrom(
@@ -547,7 +547,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
                   const SizedBox(width: 10),
                   _ActionButton(
                     icon: Icons.map_outlined,
-                    label: 'Bản đồ',
+                    label: 'Map',
                     onTap: _openInMaps,
                   ),
                 ],
@@ -569,21 +569,21 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
                 children: [
                   _SpecRow(
                     icon: Icons.access_time_rounded,
-                    label: 'Giờ địa phương',
+                    label: 'Local Time',
                     value: _formatLocalTime(_currentCam.timezone),
                   ),
                   const Divider(color: Colors.white10, height: 20),
                   _SpecRow(
                     icon: Icons.public_rounded,
-                    label: 'Tọa độ GPS',
+                    label: 'GPS Coordinates',
                     value:
                         '${_currentCam.latitude.toStringAsFixed(4)}°, ${_currentCam.longitude.toStringAsFixed(4)}°',
                   ),
                   const Divider(color: Colors.white10, height: 20),
                   _SpecRow(
                     icon: Icons.cell_tower_rounded,
-                    label: 'Trạng thái máy quay',
-                    value: 'Trực tuyến • Tín hiệu tốt',
+                    label: 'Camera Status',
+                    value: 'Online • Strong Signal',
                     valueColor: AppColors.emerald,
                   ),
                 ],
@@ -599,7 +599,7 @@ class _WebcamPlayerScreenState extends ConsumerState<WebcamPlayerScreen>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    'Webcam Nổi Bật Khác',
+                    'Featured Live Webcams',
                     style: TextStyle(
                       color: AppColors.textPrimary,
                       fontSize: 17,

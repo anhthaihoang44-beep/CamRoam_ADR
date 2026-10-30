@@ -88,7 +88,7 @@ class _Earth3dScreenState extends State<Earth3dScreen> with TickerProviderStateM
                         context.push('/map-webcams');
                       },
                       icon: const Icon(Icons.videocam_rounded, size: 18),
-                      label: const Text('Xem Webcams'),
+                      label: const Text('Explore Webcams'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.cyan,
                         foregroundColor: Colors.black,
@@ -108,7 +108,7 @@ class _Earth3dScreenState extends State<Earth3dScreen> with TickerProviderStateM
                         }
                       },
                       icon: const Icon(Icons.map_rounded, size: 18),
-                      label: const Text('Mở Google Maps'),
+                      label: const Text('Open in Google Maps'),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: Colors.white,
                         side: const BorderSide(color: AppColors.borderSubtle),
@@ -143,7 +143,7 @@ class _Earth3dScreenState extends State<Earth3dScreen> with TickerProviderStateM
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Chạm vào thành phố để khám phá',
+              'Tap a city to explore',
               style: TextStyle(color: AppColors.textSecondary, fontSize: 14),
             ),
             const SizedBox(height: 20),
