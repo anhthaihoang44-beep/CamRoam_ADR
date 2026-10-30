@@ -31,6 +31,11 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
+      - name: Patch camera_avfoundation for Xcode 16 Swift compatibility
+        run: |
+          find ~/.pub-cache/hosted/pub.dev/camera_avfoundation* -name "DefaultCamera.swift" -exec sed -i '' 's/AVCaptureSession\.wasInterruptedNotification/NSNotification.Name("AVCaptureSessionWasInterruptedNotification")/g' {} +
+          find ~/.pub-cache/hosted/pub.dev/camera_avfoundation* -name "DefaultCamera.swift" -exec sed -i '' 's/AVCaptureSession\.runtimeErrorNotification/NSNotification.Name("AVCaptureSessionRuntimeErrorNotification")/g' {} +
+
       - name: Run Tests
         run: flutter test
 
