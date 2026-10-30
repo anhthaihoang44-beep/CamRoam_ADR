@@ -1,0 +1,66 @@
+name: roamcam
+description: "RoamCam - Global Live Webcams, 360 Exploration & Geo GPS Toolkit"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.3
+
+  # State Management & Routing
+  flutter_riverpod: ^2.6.1
+  go_router: ^14.6.2
+
+  # Maps & Geospatial
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  flutter_map_marker_cluster: ^1.3.6
+
+  # 360 Panorama & Globe
+  panorama_viewer: ^3.0.0
+
+  # Camera, Sensors & Image
+  camera: ^0.11.0+2
+  geolocator: ^13.0.1
+  geocoding: ^3.0.0
+  sensors_plus: ^6.1.1
+  image: ^4.3.0
+  gal: ^2.3.0
+
+  # Storage & Offline
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.5
+
+  # Network & Media
+  cached_network_image: ^3.4.1
+  url_launcher: ^6.3.1
+  share_plus: ^10.1.2
+  flutter_dotenv: ^5.2.1
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+dependency_overrides:
+  path_provider_android: 2.2.23
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - .env
+    - assets/mock/webcams.json
+    - assets/mock/landmarks.json
+    - assets/images/
+

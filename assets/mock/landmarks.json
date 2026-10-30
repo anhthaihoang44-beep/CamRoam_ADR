@@ -1,0 +1,107 @@
+[
+  {
+    "id": "lm-01",
+    "name": "Eiffel Tower",
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8584,
+    "longitude": 2.2945,
+    "category": "Monument",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=800&auto=format&fit=crop&q=80",
+    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Eiffel_Tower_equirectangular.jpg/1280px-Eiffel_Tower_equirectangular.jpg",
+    "badgeIcon": "tower",
+    "description": "The world-famous iron lattice tower on the Champ de Mars, constructed in 1889."
+  },
+  {
+    "id": "lm-02",
+    "name": "Colosseum",
+    "city": "Rome",
+    "country": "Italy",
+    "latitude": 41.8902,
+    "longitude": 12.4922,
+    "category": "Historic",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&auto=format&fit=crop&q=80",
+    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Colosseum_360_panorama.jpg/1280px-Colosseum_360_panorama.jpg",
+    "badgeIcon": "colosseum",
+    "description": "Ancient Roman amphitheatre in the centre of Rome, the largest ever built."
+  },
+  {
+    "id": "lm-03",
+    "name": "Shibuya Crossing",
+    "city": "Tokyo",
+    "country": "Japan",
+    "latitude": 35.6595,
+    "longitude": 139.7004,
+    "category": "Urban",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&auto=format&fit=crop&q=80",
+    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shibuya_Crossing_360_Panorama.jpg/1280px-Shibuya_Crossing_360_Panorama.jpg",
+    "badgeIcon": "crossing",
+    "description": "The world's busiest pedestrian scramble crossing surrounded by neon lights."
+  },
+  {
+    "id": "lm-04",
+    "name": "Ha Long Bay",
+    "city": "Quang Ninh",
+    "country": "Vietnam",
+    "latitude": 20.9101,
+    "longitude": 107.1839,
+    "category": "Nature",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&auto=format&fit=crop&q=80",
+    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Halong_Bay_360_Panorama.jpg/1280px-Halong_Bay_360_Panorama.jpg",
+    "badgeIcon": "island",
+    "description": "UNESCO World Heritage site featuring thousands of limestone karsts and isles."
+  },
+  {
+    "id": "lm-05",
+    "name": "Taj Mahal",
+    "city": "Agra",
+    "country": "India",
+    "latitude": 27.1751,
+    "longitude": 78.0421,
+    "category": "Monument",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Taj_Mahal_360_panorama.jpg/1280px-Taj_Mahal_360_panorama.jpg",
+    "badgeIcon": "temple",
+    "description": "An ivory-white marble mausoleum on the south bank of the Yamuna river."
+  },
+  {
+    "id": "lm-06",
+    "name": "Machu Picchu",
+    "city": "Cusco",
+    "country": "Peru",
+    "latitude": -13.1631,
+    "longitude": -72.5450,
+    "category": "Historic",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&auto=format&fit=crop&q=80",
+    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Machu_Picchu_360_Panorama.jpg/1280px-Machu_Picchu_360_Panorama.jpg",
+    "badgeIcon": "ruins",
+    "description": "15th-century Inca citadel located in the Eastern Cordillera of southern Peru."
+  },
+  {
+    "id": "lm-07",
+    "name": "Santorini Caldera",
+    "city": "Oia",
+    "country": "Greece",
+    "latitude": 36.4618,
+    "longitude": 25.3753,
+    "category": "Coastal",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&auto=format&fit=crop&q=80",
+    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Santorini_360_Panorama.jpg/1280px-Santorini_360_Panorama.jpg",
+    "badgeIcon": "cliff",
+    "description": "Breathtaking cliffside volcanic caldera with iconic whitewashed buildings."
+  },
+  {
+    "id": "lm-08",
+    "name": "Golden Gate Bridge",
+    "city": "San Francisco",
+    "country": "United States",
+    "latitude": 37.8199,
+    "longitude": -122.4783,
+    "category": "Structure",
+    "thumbnailUrl": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&auto=format&fit=crop&q=80",
+    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Golden_Gate_Bridge_equirectangular.jpg/1280px-Golden_Gate_Bridge_equirectangular.jpg",
+    "badgeIcon": "bridge",
+    "description": "Suspension bridge spanning the Golden Gate strait connecting SF to Marin County."
+  }
+]
+
