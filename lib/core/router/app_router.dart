@@ -55,7 +55,21 @@ class AppRouter {
       GoRoute(
         path: '/live-player',
         builder: (context, state) {
-          final cam = state.extra as WebcamModel;
+          final cam = (state.extra as WebcamModel?) ??
+              const WebcamModel(
+                id: 'cam-01',
+                title: 'Shibuya Crossing Live',
+                city: 'Tokyo',
+                country: 'Japan',
+                latitude: 35.6595,
+                longitude: 139.7004,
+                thumbnailUrl:
+                    'https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200&auto=format&fit=crop&q=80',
+                streamUrl: 'https://www.youtube.com/watch?v=HpdO5Kq3o7Y',
+                category: 'Skyline',
+                isHot: true,
+                timezone: 'Asia/Tokyo',
+              );
           return WebcamPlayerScreen(webcam: cam);
         },
       ),
