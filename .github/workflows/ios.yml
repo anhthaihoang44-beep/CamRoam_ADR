@@ -1,0 +1,53 @@
+name: iOS Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-ios:
+    name: Build iOS Runner & IPA
+    runs-on: macos-14
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Run Tests
+        run: flutter test
+
+      - name: Install CocoaPods
+        run: |
+          cd ios
+          pod install --repo-update
+          cd ..
+
+      - name: Build iOS (No Codesign)
+        run: flutter build ios --no-codesign --release
+
+      - name: Package Payload into unsigned IPA
+        run: |
+          mkdir -p build/ios/iphoneos/Payload
+          cp -r build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload/
+          cd build/ios/iphoneos
+          zip -r RoamCam.ipa Payload
+          cd ../../..
+
+      - name: Upload iOS App Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: RoamCam-iOS
+          path: |
+            build/ios/iphoneos/RoamCam.ipa
+            build/ios/iphoneos/Runner.app

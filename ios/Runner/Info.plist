@@ -44,6 +44,8 @@
 	<!-- Permission strings for RoamCam features -->
 	<key>NSCameraUsageDescription</key>
 	<string>RoamCam requires access to your camera to take GPS-stamped photos with real-time coordinate overlays.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>RoamCam requires microphone access when recording exploration video clips.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>RoamCam requires your location to display live webcams near you, calibrate the digital compass, and record GPS coordinates on photos.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -52,8 +54,15 @@
 	<string>RoamCam needs access to your photo library to save your watermarked GPS exploration photos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>RoamCam saves your watermarked GPS exploration photos to your photo library.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>RoamCam requires access to motion and compass sensors to provide the real-time digital compass tool.</string>
 
 	<!-- Allow opening external maps and webcams -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>https</string>
