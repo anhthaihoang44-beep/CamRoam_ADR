@@ -110,7 +110,7 @@ class ToolsScreen extends StatelessWidget {
                   color: AppColors.hotOrange,
                   title: 'Photo History',
                   subtitle: 'Your GPS photo journal',
-                  onTap: () {},
+                  onTap: () => context.push('/gps-camera'),
                 ),
               ],
             ),

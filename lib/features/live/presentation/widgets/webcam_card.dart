@@ -29,22 +29,25 @@ class WebcamCard extends StatelessWidget {
       width: width,
       height: height,
       margin: const EdgeInsets.only(right: 14),
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors.surfaceCard,
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.borderSubtle, width: 1),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.35),
-                blurRadius: 12,
-                offset: const Offset(0, 5),
-              ),
-            ],
+      decoration: BoxDecoration(
+        color: AppColors.surfaceCard,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: AppColors.borderSubtle, width: 1),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.35),
+            blurRadius: 12,
+            offset: const Offset(0, 5),
           ),
-          clipBehavior: Clip.antiAlias,
+        ],
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          splashColor: AppColors.cyan.withOpacity(0.15),
+          highlightColor: AppColors.cyan.withOpacity(0.08),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -185,4 +188,3 @@ class WebcamCard extends StatelessWidget {
     );
   }
 }
-

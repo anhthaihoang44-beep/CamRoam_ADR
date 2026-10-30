@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/theme/app_colors.dart';
 
 class Earth3dScreen extends StatefulWidget {
@@ -13,18 +14,17 @@ class Earth3dScreen extends StatefulWidget {
 class _Earth3dScreenState extends State<Earth3dScreen> with TickerProviderStateMixin {
   late AnimationController _rotController;
   late AnimationController _glowController;
-  double _lastAngle = 0;
   double _angle = 0;
 
-  final List<({String name, double lat, double lng, String emoji})> _cities = [
-    (name: 'Tokyo', lat: 35.6, lng: 139.7, emoji: '🗼'),
-    (name: 'New York', lat: 40.7, lng: -74.0, emoji: '🗽'),
-    (name: 'Paris', lat: 48.8, lng: 2.3, emoji: '🗼'),
-    (name: 'Sydney', lat: -33.9, lng: 151.2, emoji: '🦘'),
-    (name: 'Da Nang', lat: 16.0, lng: 108.2, emoji: '🐉'),
-    (name: 'Dubai', lat: 25.2, lng: 55.3, emoji: '🏙️'),
-    (name: 'London', lat: 51.5, lng: -0.1, emoji: '👑'),
-    (name: 'Rio', lat: -22.9, lng: -43.2, emoji: '🏖️'),
+  final List<({String name, double lat, double lng, String emoji, String country})> _cities = [
+    (name: 'Tokyo', lat: 35.6, lng: 139.7, emoji: '🗼', country: 'Japan'),
+    (name: 'New York', lat: 40.7, lng: -74.0, emoji: '🗽', country: 'United States'),
+    (name: 'Paris', lat: 48.8, lng: 2.3, emoji: '🗼', country: 'France'),
+    (name: 'Sydney', lat: -33.9, lng: 151.2, emoji: '🦘', country: 'Australia'),
+    (name: 'Da Nang', lat: 16.0, lng: 108.2, emoji: '🐉', country: 'Vietnam'),
+    (name: 'Dubai', lat: 25.2, lng: 55.3, emoji: '🏙️', country: 'UAE'),
+    (name: 'London', lat: 51.5, lng: -0.1, emoji: '👑', country: 'United Kingdom'),
+    (name: 'Rio', lat: -22.9, lng: -43.2, emoji: '🏖️', country: 'Brazil'),
   ];
 
   @override
@@ -39,6 +39,91 @@ class _Earth3dScreenState extends State<Earth3dScreen> with TickerProviderStateM
     _rotController.dispose();
     _glowController.dispose();
     super.dispose();
+  }
+
+  void _showCitySheet(({String name, double lat, double lng, String emoji, String country}) city) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: AppColors.surfaceCard,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (ctx) {
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(20, 20, 20, 32),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(city.emoji, style: const TextStyle(fontSize: 32)),
+                  const SizedBox(width: 12),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        city.name,
+                        style: const TextStyle(
+                          color: AppColors.textPrimary,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        '${city.country} • ${city.lat}° N, ${city.lng}° E',
+                        style: const TextStyle(color: AppColors.textSecondary, fontSize: 13),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.pop(ctx);
+                        context.push('/map-webcams');
+                      },
+                      icon: const Icon(Icons.videocam_rounded, size: 18),
+                      label: const Text('Xem Webcams'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.cyan,
+                        foregroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: () async {
+                        Navigator.pop(ctx);
+                        final uri = Uri.parse('https://maps.google.com/?q=${city.lat},${city.lng}');
+                        if (await canLaunchUrl(uri)) {
+                          await launchUrl(uri, mode: LaunchMode.externalApplication);
+                        }
+                      },
+                      icon: const Icon(Icons.map_rounded, size: 18),
+                      label: const Text('Mở Google Maps'),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        side: const BorderSide(color: AppColors.borderSubtle),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -58,7 +143,7 @@ class _Earth3dScreenState extends State<Earth3dScreen> with TickerProviderStateM
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Tap a city to explore',
+              'Chạm vào thành phố để khám phá',
               style: TextStyle(color: AppColors.textSecondary, fontSize: 14),
             ),
             const SizedBox(height: 20),
@@ -103,9 +188,9 @@ class _Earth3dScreenState extends State<Earth3dScreen> with TickerProviderStateM
                   final city = _cities[i];
                   return GestureDetector(
                     onTap: () {
-                      // Fly-to animation: rotate globe to city longitude
                       final targetAngle = city.lng * math.pi / 180;
                       setState(() => _angle = targetAngle);
+                      _showCitySheet(city);
                     },
                     child: Container(
                       width: 90,
@@ -150,7 +235,7 @@ class _GlobePainter extends CustomPainter {
   final double autoAngle;
   final double manualAngle;
   final double glowPulse;
-  final List<({String name, double lat, double lng, String emoji})> cities;
+  final List<({String name, double lat, double lng, String emoji, String country})> cities;
 
   _GlobePainter({
     required this.autoAngle,
@@ -248,4 +333,3 @@ class _GlobePainter extends CustomPainter {
   bool shouldRepaint(_GlobePainter old) =>
       old.autoAngle != autoAngle || old.manualAngle != manualAngle || old.glowPulse != glowPulse;
 }
-

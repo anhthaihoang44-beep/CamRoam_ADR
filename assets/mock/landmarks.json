@@ -8,7 +8,7 @@
     "longitude": 2.2945,
     "category": "Monument",
     "thumbnailUrl": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=800&auto=format&fit=crop&q=80",
-    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Eiffel_Tower_equirectangular.jpg/1280px-Eiffel_Tower_equirectangular.jpg",
+    "panorama360Url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1600&auto=format&fit=crop&q=80",
     "badgeIcon": "tower",
     "description": "The world-famous iron lattice tower on the Champ de Mars, constructed in 1889."
   },
@@ -21,7 +21,7 @@
     "longitude": 12.4922,
     "category": "Historic",
     "thumbnailUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&auto=format&fit=crop&q=80",
-    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Colosseum_360_panorama.jpg/1280px-Colosseum_360_panorama.jpg",
+    "panorama360Url": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1600&auto=format&fit=crop&q=80",
     "badgeIcon": "colosseum",
     "description": "Ancient Roman amphitheatre in the centre of Rome, the largest ever built."
   },
@@ -34,7 +34,7 @@
     "longitude": 139.7004,
     "category": "Urban",
     "thumbnailUrl": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&auto=format&fit=crop&q=80",
-    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shibuya_Crossing_360_Panorama.jpg/1280px-Shibuya_Crossing_360_Panorama.jpg",
+    "panorama360Url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1600&auto=format&fit=crop&q=80",
     "badgeIcon": "crossing",
     "description": "The world's busiest pedestrian scramble crossing surrounded by neon lights."
   },
@@ -47,7 +47,7 @@
     "longitude": 107.1839,
     "category": "Nature",
     "thumbnailUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&auto=format&fit=crop&q=80",
-    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Halong_Bay_360_Panorama.jpg/1280px-Halong_Bay_360_Panorama.jpg",
+    "panorama360Url": "https://images.unsplash.com/photo-1528127269322-539801943592?w=1600&auto=format&fit=crop&q=80",
     "badgeIcon": "island",
     "description": "UNESCO World Heritage site featuring thousands of limestone karsts and isles."
   },
@@ -60,7 +60,7 @@
     "longitude": 78.0421,
     "category": "Monument",
     "thumbnailUrl": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
-    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Taj_Mahal_360_panorama.jpg/1280px-Taj_Mahal_360_panorama.jpg",
+    "panorama360Url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&auto=format&fit=crop&q=80",
     "badgeIcon": "temple",
     "description": "An ivory-white marble mausoleum on the south bank of the Yamuna river."
   },
@@ -73,7 +73,7 @@
     "longitude": -72.5450,
     "category": "Historic",
     "thumbnailUrl": "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&auto=format&fit=crop&q=80",
-    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Machu_Picchu_360_Panorama.jpg/1280px-Machu_Picchu_360_Panorama.jpg",
+    "panorama360Url": "https://images.unsplash.com/photo-1509299349698-dd22323b5963?w=1600&auto=format&fit=crop&q=80",
     "badgeIcon": "ruins",
     "description": "15th-century Inca citadel located in the Eastern Cordillera of southern Peru."
   },
@@ -86,7 +86,7 @@
     "longitude": 25.3753,
     "category": "Coastal",
     "thumbnailUrl": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&auto=format&fit=crop&q=80",
-    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Santorini_360_Panorama.jpg/1280px-Santorini_360_Panorama.jpg",
+    "panorama360Url": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1600&auto=format&fit=crop&q=80",
     "badgeIcon": "cliff",
     "description": "Breathtaking cliffside volcanic caldera with iconic whitewashed buildings."
   },
@@ -99,9 +99,8 @@
     "longitude": -122.4783,
     "category": "Structure",
     "thumbnailUrl": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&auto=format&fit=crop&q=80",
-    "panorama360Url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Golden_Gate_Bridge_equirectangular.jpg/1280px-Golden_Gate_Bridge_equirectangular.jpg",
+    "panorama360Url": "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=1600&auto=format&fit=crop&q=80",
     "badgeIcon": "bridge",
     "description": "Suspension bridge spanning the Golden Gate strait connecting SF to Marin County."
   }
 ]
-
