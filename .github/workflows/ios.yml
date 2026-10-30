@@ -11,9 +11,16 @@ jobs:
   build-ios:
     name: Build iOS Runner & IPA
     runs-on: macos-14
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Clean Local Ephemeral Files
+        run: |
+          rm -f ios/Flutter/Generated.xcconfig
+          rm -f ios/Flutter/flutter_export_environment.sh
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -27,28 +34,21 @@ jobs:
       - name: Run Tests
         run: flutter test
 
-      - name: Install CocoaPods
-        run: |
-          cd ios
-          pod install --repo-update
-          cd ..
+      - name: Build iOS App (No Codesign)
+        run: flutter build ios --release --no-codesign
 
-      - name: Build iOS (No Codesign)
-        run: flutter build ios --no-codesign --release
-
-      - name: Package Payload into unsigned IPA
+      - name: Package Payload into Sideloadly IPA
         run: |
           mkdir -p build/ios/iphoneos/Payload
           cp -r build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload/
           cd build/ios/iphoneos
-          zip -r RoamCam.ipa Payload
+          zip -r -9 RoamCam.ipa Payload
           cd ../../..
+          ls -lh build/ios/iphoneos/RoamCam.ipa
 
-      - name: Upload iOS App Artifacts
+      - name: Upload iOS App Artifact
         uses: actions/upload-artifact@v4
         with:
           name: RoamCam-iOS
-          path: |
-            build/ios/iphoneos/RoamCam.ipa
-            build/ios/iphoneos/Runner.app
-
+          path: build/ios/iphoneos/RoamCam.ipa
+          retention-days: 14

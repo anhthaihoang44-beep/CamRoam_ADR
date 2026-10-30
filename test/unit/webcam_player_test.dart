@@ -42,3 +42,4 @@ void main() {
     expect(find.text('Tọa độ GPS'), findsOneWidget);
   });
 }
+

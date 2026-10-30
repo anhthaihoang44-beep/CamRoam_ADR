@@ -8,3 +8,4 @@ $buildExit = $LASTEXITCODE
 
 Write-Host "Flutter build exited with code $buildExit"
 exit $buildExit
+
